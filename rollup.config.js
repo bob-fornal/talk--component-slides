@@ -10,9 +10,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: ['src/slide-cover/slide-cover.ts'],
+  input: ['dist/slide-cover/slide-cover.js'],
   output: {
-    dir: 'dist/',
+    dir: 'dist/prod/',
     format: 'esm',
   },
   onwarn(warning) {

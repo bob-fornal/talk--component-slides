@@ -18,6 +18,12 @@ export class SlideCover extends LitElement {
     .slide--wrapper {
       --foreground-color: #69f0ae;
       --overlay-width: 25vw;
+
+      line-height: 1.15;
+      color: var(--foreground-color);
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+
       display: block;
       position: fixed;
       left: 0;
@@ -27,9 +33,6 @@ export class SlideCover extends LitElement {
       background-image: var(--background-image);
       background-repeat: no-repeat;
       background-size: cover;
-      color: var(--foreground-color);
-      font-family: Arial, sans-serif;
-      box-sizing: border-box;
     }
     .slide--panel {
       z-index: 1;
