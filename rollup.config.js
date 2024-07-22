@@ -9,6 +9,8 @@ import terser from '@rollup/plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
+import copy from 'rollup-plugin-copy';
+
 export default {
   input: ['dist/slide-cover/slide-cover.js'],
   output: {
@@ -21,6 +23,11 @@ export default {
     }
   },
   plugins: [
+    copy({
+      targets: [
+        { src: 'src/**/*.md', dest: 'dist/prod' },
+      ],
+    }),
     replace({preventAssignment: false, 'Reflect.decorate': 'undefined'}),
     resolve(),
     /**

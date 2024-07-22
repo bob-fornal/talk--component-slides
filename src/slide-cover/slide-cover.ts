@@ -64,6 +64,10 @@ export class SlideCover extends LitElement {
       right: 0.25em;
       box-sizing: border-box;
     }
+    .slide--title-inner {
+      display: inline-block;
+      text-align: center;
+    }
     .slide--sections {
       position: fixed;
       display: inline-flex;
@@ -90,6 +94,12 @@ export class SlideCover extends LitElement {
 
     .bold {
       font-weight: bold;
+    }
+    .smaller {
+      font-size: 0.5em;
+    }
+    .align-right {
+      margin-left: 8em;
     }
   `;
 
@@ -125,7 +135,9 @@ export class SlideCover extends LitElement {
       <div class="slide--wrapper">
         <div class="slide--panel"></div>
         <div class="slide--title-wrapper">
-          <div class="slide--title">${this._content.title}</div>
+          <div class="slide--title">
+            <div class="slide--title-inner">${unsafeHTML(this._content.title)}</div>
+          </div>
         </div>
         <div class="slide--sections">
           <div class="slide--section section-1">
