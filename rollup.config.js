@@ -12,7 +12,10 @@ import replace from '@rollup/plugin-replace';
 import copy from 'rollup-plugin-copy';
 
 export default {
-  input: ['dist/slide-cover/slide-cover.js'],
+  input: [
+    'dist/slide-timeline/slide-timeline.js',
+    'dist/slide-cover/slide-cover.js',
+  ],
   output: {
     dir: 'dist/prod/',
     format: 'esm',
@@ -25,7 +28,10 @@ export default {
   plugins: [
     copy({
       targets: [
-        { src: 'src/**/*.md', dest: 'dist/prod' },
+        {
+          src: 'src/**/*.md',
+          dest: 'dist/prod',
+        },
       ],
     }),
     replace({preventAssignment: false, 'Reflect.decorate': 'undefined'}),
